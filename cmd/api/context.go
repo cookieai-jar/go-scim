@@ -2,7 +2,10 @@ package api
 
 import (
 	"context"
-	"github.com/imulab/go-scim/cmd/internal/groupsync"
+	"sync"
+	"time"
+
+	"github.com/cookieai-jar/go-scim/cmd/internal/groupsync"
 	scimmongo "github.com/imulab/go-scim/mongo/v2"
 	"github.com/imulab/go-scim/pkg/v2/crud"
 	"github.com/imulab/go-scim/pkg/v2/db"
@@ -13,8 +16,6 @@ import (
 	"github.com/streadway/amqp"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"sync"
-	"time"
 )
 
 type applicationContext struct {

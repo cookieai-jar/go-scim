@@ -1,4 +1,4 @@
-module github.com/imulab/go-scim
+module github.com/cookieai-jar/go-scim
 
 go 1.13
 
@@ -22,7 +22,3 @@ require (
 	golang.org/x/sys v0.0.0-20200121082415-34d275377bf9 // indirect
 	gopkg.in/yaml.v2 v2.2.7 // indirect
 )
-
-replace github.com/imulab/go-scim/mongo/v2 => ./mongo/v2
-
-replace github.com/imulab/go-scim/pkg/v2 => ./pkg/v2

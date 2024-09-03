@@ -1,7 +1,7 @@
 package groupsync
 
 import (
-	"github.com/imulab/go-scim/cmd/internal/args"
+	"github.com/cookieai-jar/go-scim/cmd/internal/args"
 	"github.com/urfave/cli/v2"
 )
 

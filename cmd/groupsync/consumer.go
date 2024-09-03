@@ -3,7 +3,9 @@ package groupsync
 import (
 	"context"
 	"encoding/json"
-	job "github.com/imulab/go-scim/cmd/internal/groupsync"
+	"time"
+
+	job "github.com/cookieai-jar/go-scim/cmd/internal/groupsync"
 	"github.com/imulab/go-scim/pkg/v2/db"
 	"github.com/imulab/go-scim/pkg/v2/groupsync"
 	"github.com/imulab/go-scim/pkg/v2/prop"
@@ -11,7 +13,6 @@ import (
 	"github.com/rs/zerolog"
 	uuid "github.com/satori/go.uuid"
 	"github.com/streadway/amqp"
-	"time"
 )
 
 type consumer struct {
