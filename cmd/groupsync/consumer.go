@@ -3,15 +3,17 @@ package groupsync
 import (
 	"context"
 	"encoding/json"
+	"time"
+
+	uuid "github.com/gofrs/uuid"
+	"github.com/rs/zerolog"
+	"github.com/streadway/amqp"
+
 	job "github.com/imulab/go-scim/cmd/internal/groupsync"
 	"github.com/imulab/go-scim/pkg/v2/db"
 	"github.com/imulab/go-scim/pkg/v2/groupsync"
 	"github.com/imulab/go-scim/pkg/v2/prop"
 	"github.com/imulab/go-scim/pkg/v2/service/filter"
-	"github.com/rs/zerolog"
-	uuid "github.com/satori/go.uuid"
-	"github.com/streadway/amqp"
-	"time"
 )
 
 type consumer struct {
@@ -192,7 +194,7 @@ func (c *consumer) retry(message *job.Message) {
 }
 
 func (c *consumer) send(message *job.Message) {
-	messageId := uuid.NewV4().String()
+	messageId := uuid.Must(uuid.NewV4()).String()
 
 	raw, err := json.Marshal(message)
 	if err != nil {
